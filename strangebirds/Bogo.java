@@ -16,8 +16,11 @@ import java.util.*;
 // for 8 items, avg of 100 runs: 6.506633649999999ms
 // for 9 items, avg of 100 runs: 61.78610074ms
 // for 10 items, avg of 100 runs: 575.2219407599998ms
+// for 11 items, avg of 10 runs: 11888.166443900001ms
+// for 12 items, avg of 10 runs: 86044.82849790002ms
+// for 13 items, avg of 10 runs: 1453152.7662497996ms (~24 min)
 //
-// I've never seen 11 terminate. I think this is O(n^2 * n!).
+// I've never seen 14 terminate. I think this is O(n^2 * n!).
 //
 public class Bogo {
     static void sort(List<Integer> list) {
@@ -44,7 +47,7 @@ public class Bogo {
         long start;
         long stop;
 
-        for (int i = 0, n=100; i < 20; i++){
+        for (int i = 0, n=10; i < 20; i++){
             double sum = 0.0;
             for (int j = n; j > 0; j--) {
                 List<Integer> list = new LinkedList<>();
@@ -55,7 +58,7 @@ public class Bogo {
                 sort(list);
                 stop = System.nanoTime();
                 double millis = (stop-start)/1e6;
-                if (n < 100) 
+                if (n < 10)
                     System.out.println("for "+i+" items: "+test(list)+": "+millis+"ms");
                 sum += millis;
             }
