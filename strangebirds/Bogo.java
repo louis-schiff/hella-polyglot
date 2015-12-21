@@ -2,7 +2,7 @@ import java.util.*;
 
 //
 // A preposterously inefficient correct sorting algorithm based on Bogo-sort and 
-// Collections.shuffle choking on linked lists. 
+// Collections.shuffle choking on non-RandomAccess lists. 
 
 // sample output:
 // for 0 items, avg of 100 runs: 0.005211529999999995ms
